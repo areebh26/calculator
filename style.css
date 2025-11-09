@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #667eea ;
+}
+.main_container{
+    background-color:rgb(255, 255, 255,0.2);
+    width: 20%;
+    margin: auto;
+    margin-top: 150px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.main_container div{
+    width: 85%;
+    margin: auto;
+    
+}
+.display_container{
+   display: flex;
+   background-color:rgba(0, 0,0,0.5);
+   justify-content: space-between;
+   border-radius: 10px;
+   
+    
+
+}
+.container_for_4_boxes,.second_container_for_4_boxes,.third_container_for_4_boxes,.fourth_container_for_4_boxes,.last_container{
+    display: flex;
+    justify-content: space-between;
+
+
+}
+.container_for_4_boxes>button,.second_container_for_4_boxes>button,.third_container_for_4_boxes>button,.fourth_container_for_4_boxes>button,.last_container>button{
+    width: 54px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255,0.3);
+    border: none;
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+    
+ }
+ .last_container>button{
+    width: 125px;
+    }
+ #remove_bt{
+    font-size: 15px;
+    padding-left: 15px;
+ }
+ #clear_bt{
+    background-color: red;
+ }
+ #equals_bt{
+    background-color: rgb(93, 234, 93);
+ }
+ #divide_bt,#multiply_bt,#minus_bt,#plus_bt{
+    background-color: rgb(255, 255, 255,0.1);
+ }
+ input,#result_box{
+     background-color: transparent;
+     border: none;
+     color: white;
+     padding-top: 50px;
+ }
+ #result_box{
+    width: 55px;
+ }
+ 
