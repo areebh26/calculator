@@ -75,5 +75,6 @@ body{
  }
  #result_box{
     width: 55px;
+    text-align: right;
  }
  
