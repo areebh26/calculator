@@ -72,6 +72,7 @@ numberButtons.forEach(i=>{
     i.addEventListener("click",(e)=>{
         text+=e.target.textContent;
         input.value=text;
+        resultBox.textContent="";
 
     })
 });
@@ -80,6 +81,7 @@ operationButtons.forEach(i=>{
         text+=e.target.textContent;
         input.value=text;
         symbol=e.target.textContent;
+        resultBox.textContent="";
     })
 });
 clearButton.addEventListener("click",()=>{
@@ -117,7 +119,8 @@ equalsButton.addEventListener("click",()=>{
     }
     else{
         resultBox.textContent=operate(num1,num2,symbol);
-        text=resultBox.textContent;
+        input.value="";
+        text="";
     }
 
     
