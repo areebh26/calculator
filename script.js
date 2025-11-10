@@ -29,9 +29,12 @@ function operate(num1,num2,operator){
 }
 function occurence(string,array){
     let count=0;
-    for (let i = 0; i < array.length; i++) {
-        if(string.includes(array[i])){
-            count++;
+    for (let i = 0; i < string.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+            if(string[i]===array[j]){
+                count++;
+            }
+            
         }
         
     }
