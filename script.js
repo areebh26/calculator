@@ -133,7 +133,7 @@ let text="";
 let symbol;
 numberButtons.forEach(i=>{
     i.addEventListener("click",(e)=>{
-        text+=e.target.textContent;
+        text+=e.key;
         input.value=text;
         resultBox.textContent="";
 
@@ -168,8 +168,8 @@ operationButtons.forEach(i=>{
     else{
         text="";
         text+=operate(num1,num2,symbol);
-        text+=e.target.textContent;
-        symbol=e.target.textContent;
+        text+=e.key;
+        symbol=e.key;
         input.value=text;
         
         
@@ -179,16 +179,16 @@ operationButtons.forEach(i=>{
         else if(resultBox.textContent.length>0){
             text="";
             text+=resultBox.textContent;
-            text+=e.target.textContent;
-            symbol=e.target.textContent;
+            text+=e.key;
+            symbol=e.key;
             input.value=text;
 
 
         }
 else{
-            text+=e.target.textContent;
+            text+=e.key;
         input.value=text;
-        symbol=e.target.textContent;
+        symbol=e.key;
         resultBox.textContent="";
         }
         ;
@@ -237,7 +237,109 @@ equalsButton.addEventListener("click",()=>{
     
 
 })
+document.addEventListener("keydown",(e)=>{
+    if(e.key==="1" || e.key==="2" || e.key==="3" || e.key==="4" || e.key==="5" || e.key==="6" || e.key==="7" || e.key==="8" || e.key=== "9" || e.key==="0"){
+        text+=e.key;
+        input.value=text;
+        resultBox.textContent="";
 
+    }
+    else if (e.key==="+" || e.key==="-" || e.key==="*" || e.key==="/" || e.key==="."){
+        if(input.value.length>2){
+            let array = input.value.split(/[-+*/]/);
+        let num1 = Number(array[0]);
+        let num2 = Number(array[1]);
+        if(num2===NaN){
+        input.value=String(num1);
+        text=String(num1);
+        }
+        else if(occurence(input.value,["+","-","*","/"])>1){
+        input.value="invalid input";
+        text="";
+        }
+        else if(checkWrongPosition(input.value,["+","-","*","/"])){
+        input.value="invalid input";
+        text="";
+        }
+        else if(pointOccurence(array[0])>1 || pointOccurence(array[1])>1){
+        input.value="invalid input";
+        text="";
+        }
+        else if(array[1]==="0"){
+        input.value="division by zero is not possible";
+        text="";
+        }
+        else{
+        text="";
+        text+=operate(num1,num2,symbol);
+        text+=e.key;
+        symbol=e.key;
+        input.value=text;
+        
+        
+        
+        }
+        }
+        else if(resultBox.textContent.length>0){
+            text="";
+            text+=resultBox.textContent;
+            text+=e.key;
+            symbol=e.key;
+            input.value=text;
+
+
+        }
+        else{
+            text+=e.key;
+        input.value=text;
+        symbol=e.key;
+        resultBox.textContent="";
+        }
+    }
+    else if(e.key==="Escape"){
+        input.value="";
+        text="";
+        resultBox.textContent="";
+    }
+    else if(e.key==="Backspace"){
+        input.value=input.value.slice(0,input.value.length-1);
+        text=input.value;
+    }
+    else if (e.key==="Enter"){
+        let array = input.value.split(/[-+*/]/);
+        let num1 = Number(array[0]);
+        let num2 = Number(array[1]);
+        if(num2===NaN){
+        input.value=String(num1);
+        text=String(num1);
+        }   
+        else if(occurence(input.value,["+","-","*","/"])>1){
+        input.value="invalid input";
+        text="";
+        }
+        else if(checkWrongPosition(input.value,["+","-","*","/"])){
+        input.value="invalid input";
+        text="";
+        }
+        else if(pointOccurence(array[0])>1 || pointOccurence(array[1])>1){
+        input.value="invalid input";
+        text="";
+        }
+        else if(array[1]==="0"){
+        input.value="division by zero is not possible";
+        text="";
+        }
+        else{
+        resultBox.textContent=operate(num1,num2,symbol);
+        input.value="";
+        text="";
+        }
+    }
+    
+        
+    
+
+})
 
 
 
