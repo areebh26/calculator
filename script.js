@@ -1,16 +1,68 @@
 function add(a,b){
-    return a+b;
+    let l = a+b;
+    l=String(l);
+    if(l.includes(".")){
+        let temp = l.substring(position(l,"."),l.length);
+        let temp2 = l.substring(0,position(l,"."));
+        if(temp.length>5){
+            return Number(`${temp2}${temp.substring(0,3)}`);
+        }else{
+            return Number(`${temp2}${temp}`);
+        }
+
+    }else{
+        return Number(l);
+    }
 }
 function subtract(a,b){
-    return a-b;
+    let l = a-b;
+    l=String(l);
+    if(l.includes(".")){
+        let temp = l.substring(position(l,"."),l.length);
+        let temp2 = l.substring(0,position(l,"."));
+        if(temp.length>5){
+            return Number(`${temp2}${temp.substring(0,3)}`);
+        }else{
+            return Number(`${temp2}${temp}`);
+        }
+
+    }else{
+        return Number(l);
+    }
 }
 function multiply(a,b){
-    return a*b;
+    let l = a*b;
+    l=String(l);
+    if(l.includes(".")){
+        let temp = l.substring(position(l,"."),l.length);
+        let temp2 = l.substring(0,position(l,"."));
+        if(temp.length>5){
+            return Number(`${temp2}${temp.substring(0,3)}`);
+        }else{
+            return Number(`${temp2}${temp}`);
+        }
+
+    }else{
+        return Number(l);
+    }
 }
 function divide(a,b){
-    return a/b;
-    
+    let l = a/b;
+    l=String(l);
+    if(l.includes(".")){
+        let temp = l.substring(position(l,"."),l.length);
+        let temp2 = l.substring(0,position(l,"."));
+        if(temp.length>5){
+            return Number(`${temp2}${temp.substring(0,3)}`);
+        }else{
+            return Number(`${temp2}${temp}`);
+        }
+
+    }else{
+        return Number(l);
+    }
 }
+
 function operate(num1,num2,operator){
     switch(operator){
         case "+":
@@ -61,6 +113,14 @@ function pointOccurence(string){
     }
     return count;
 
+}
+function position(string,ch){
+    for (let i = 0; i < string.length; i++) {
+        if(string[i]===ch){
+            return i;
+        }
+        
+    }
 }
 let numberButtons=document.querySelectorAll(".number_bt");
 let operationButtons=document.querySelectorAll(".operation_bt");
