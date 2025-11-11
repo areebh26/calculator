@@ -133,7 +133,7 @@ let text="";
 let symbol;
 numberButtons.forEach(i=>{
     i.addEventListener("click",(e)=>{
-        text+=e.key;
+        text+=e.target.textContent;
         input.value=text;
         resultBox.textContent="";
 
@@ -168,8 +168,8 @@ operationButtons.forEach(i=>{
     else{
         text="";
         text+=operate(num1,num2,symbol);
-        text+=e.key;
-        symbol=e.key;
+        text+=e.target.textContent;
+        symbol=e.target.textContent;
         input.value=text;
         
         
@@ -179,16 +179,16 @@ operationButtons.forEach(i=>{
         else if(resultBox.textContent.length>0){
             text="";
             text+=resultBox.textContent;
-            text+=e.key;
-            symbol=e.key;
+            text+=e.target.textContent;
+            symbol=e.target.textContent;
             input.value=text;
 
 
         }
 else{
-            text+=e.key;
+            text+=e.target.textContent;
         input.value=text;
-        symbol=e.key;
+        symbol=e.target.textContent;
         resultBox.textContent="";
         }
         ;
