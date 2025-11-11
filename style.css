@@ -25,6 +25,7 @@ body{
     
 }
 .display_container{
+   
    display: flex;
    background-color:rgba(0, 0,0,0.5);
    justify-content: space-between;
@@ -75,7 +76,7 @@ body{
      font-size: 30px;
  }
  #result_box{
-    width: 55px;
+    /* width: 55px; */
     text-align: right;
  }
  
