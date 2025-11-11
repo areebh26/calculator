@@ -141,10 +141,57 @@ numberButtons.forEach(i=>{
 });
 operationButtons.forEach(i=>{
     i.addEventListener("click",(e)=>{
+    if(input.value.length>2){
+            let array = input.value.split(/[-+*/]/);
+        let num1 = Number(array[0]);
+        let num2 = Number(array[1]);
+    if(num2===NaN){
+        input.value=String(num1);
+        text=String(num1);
+    }
+    else if(occurence(input.value,["+","-","*","/"])>1){
+        input.value="invalid input";
+        text="";
+    }
+    else if(checkWrongPosition(input.value,["+","-","*","/"])){
+        input.value="invalid input";
+        text="";
+    }
+    else if(pointOccurence(array[0])>1 || pointOccurence(array[1])>1){
+        input.value="invalid input";
+        text="";
+    }
+    else if(array[1]==="0"){
+        input.value="division by zero is not possible";
+        text="";
+    }
+    else{
+        text="";
+        text+=operate(num1,num2,symbol);
         text+=e.target.textContent;
+        symbol=e.target.textContent;
+        input.value=text;
+        
+        
+        
+    }
+        }
+        else if(resultBox.textContent.length>0){
+            text="";
+            text+=resultBox.textContent;
+            text+=e.target.textContent;
+            symbol=e.target.textContent;
+            input.value=text;
+
+
+        }
+else{
+            text+=e.target.textContent;
         input.value=text;
         symbol=e.target.textContent;
         resultBox.textContent="";
+        }
+        ;
     })
 });
 clearButton.addEventListener("click",()=>{
