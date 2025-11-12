@@ -31,6 +31,7 @@ body{
    justify-content: space-between;
    border-radius: 10px;
    
+   
     
 
 }
@@ -68,15 +69,21 @@ body{
  #divide_bt,#multiply_bt,#minus_bt,#plus_bt{
     background-color: rgb(255, 255, 255,0.1);
  }
- input,#result_box{
+  input,#result_box{
      background-color: transparent;
      border: none;
      color: white;
      padding-top: 50px;
-     font-size: 30px;
+     font-size: 20px;
+   
+ } 
+  #result_box{
+     
+     text-align: right;
+     
+   
  }
- #result_box{
-    /* width: 55px; */
-    text-align: right;
- }
+
+
+
  

@@ -163,7 +163,8 @@ operationButtons.forEach(i=>{
         text="";
     }
     else if(array[1]==="0"){
-        input.value="division by zero is not possible";
+    
+        input.value="Infinity";
         text="";
     }
     else{
@@ -228,7 +229,8 @@ equalsButton.addEventListener("click",()=>{
         text="";
     }
     else if(array[1]==="0"){
-        input.value="division by zero is not possible";
+    
+        input.value="Infinity";
         text="";
     }
     else{
@@ -270,7 +272,8 @@ document.addEventListener("keydown",(e)=>{
         text="";
         }
         else if(array[1]==="0"){
-        input.value="division by zero is not possible";
+        
+        input.value="Infinity";
         text="";
         }
         else{
@@ -330,7 +333,8 @@ document.addEventListener("keydown",(e)=>{
         text="";
         }
         else if(array[1]==="0"){
-        input.value="division by zero is not possible";
+        
+        input.value="Infinity";
         text="";
         }
         else{
